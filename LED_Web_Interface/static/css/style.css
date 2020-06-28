@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #1abc9c;
+  display: grid;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+h2 {
+  font-size: 42px;
+  color: #2c3e50;
+}
+
+
+
+.toggle {
+  position: relative;
+  display: inline;
+}
+
+input {
+  position:centre;
+  color:#fff;
+  font-weight:600;
+  font-size:20px
+ }
+
+.onbtn {
+  bottom: 15px;
+  left: 15px;
+  color:#34495e;
+}
+
+.ofbtn {
+  bottom: 15px;
+  right: 14px;
+  color: #34495e;
+}
+
+
+

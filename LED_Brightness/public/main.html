@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title>Ardiuno Controller</title> 
+  <link rel="stylesheet" href="static/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script rel="stylesheet" href="style.css">
+</head>
+<body> 
+  
+<h2>Control Brightness Of LED Using Slider</h2> 
+ 
+   <p> Min=0 Max=255 <p>
+   <input type="range" id= "inputSlider"  min="0" max="255" value="0" step="1" oninput="showValue(this.value)" />
+   <br><br><span id="outputText">0</span>
+
+   <!---<input type="range" min="0" max="100" value="0" class="slider" id="my">-->
+   <!---<p>Value: <span id="demo"></span></p>--->
+  
+ 
+ <script type="text/javascript">
+                var socket = io.connect();
+
+                socket.on('led', function (data) {
+                        document.getElementById("inputSlider").value = data.value;
+                        document.getElementById("outputText").innerHTML = data.value;
+                });
+
+                function showValue(newValue)
+                {
+                        document.getElementById("outputText").innerHTML=newValue;
+                        socket.emit('led', { value: newValue });
+                }
+        </script>
+
+<!----------
+<script>
+$(function(){
+
+    var form = $('form')
+    $('#my').on('change mouseup', function(){
+        $.ajax({
+            type: "POST",
+            url: form.action,
+            data: form.serialize(),
+        }).done(function(res){
+            //do something with the response from the server
+        });
+    });
+});
+-------------->
+<!-------
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+----->
+ </body>
+</html>
