@@ -1,10 +1,10 @@
 import time
 import serial
 from Adafruit_IO import Client, Feed, RequestError
-ADAFRUIT_IO_KEY = 'aio_Gide65PCPSj0B1GWVLnZJ2l4Gdr5'
+ADAFRUIT_IO_KEY = 'YOUR_APP_KEY'
 ar=serial.Serial("/dev/ttyACM0",9600)
 
-ADAFRUIT_IO_USERNAME = 'ARUNku7042'
+ADAFRUIT_IO_USERNAME = 'YOUR_USERNAME'
  
 a_c = Client(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)
 
