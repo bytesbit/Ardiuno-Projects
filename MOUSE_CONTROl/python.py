@@ -3,7 +3,7 @@ import time
 import serial
 
 mouse.FAILSAFE=False
-ArduinoSerial=serial.Serial('/dev/ttyACM0',9600)  #Specify the correct COM port
+ArduinoSerial=serial.Serial('/dev/ttyACM0',9600)  #
 time.sleep(1)                             #delay of 1 second
 
 while 1:
